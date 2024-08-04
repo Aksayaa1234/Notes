@@ -1,24 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react';
+import Drawerleft from './components/Drawerleft';
+import Navbar from './components/Navbar'
+import Inputs from './components/Inputs';
 
 function App() {
+  let [draw,Setdraw]=useState(false);
+  let [input,SetInput]=useState(false);
+  const OpenDrawer=()=>{
+    Setdraw(true);
+  }
+  const CloseDrawer=()=>{
+    Setdraw(false);
+  }
+  const OpenInput=()=>{
+    SetInput(true);
+  }
+  const CloseInput=()=>{
+    console.log(input);
+    SetInput(false);
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <Navbar OpenD={OpenDrawer} OpenI={OpenInput}></Navbar>
+    <Drawerleft Draw={draw} Close={CloseDrawer}></Drawerleft>
+    <Inputs Input={input}  Close={CloseInput}></Inputs>
+    </>
   );
 }
 
