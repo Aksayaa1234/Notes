@@ -11,7 +11,7 @@ const Drawerleft=({Draw,Close})=>{
             <List>
                 {items.map((ele,i)=>{
                     return(
-                    <ListItem key={i} disableGutters={true}  sx={{width:250}}>
+                    <ListItem key={i} disableGutters={true} sx={{width:250}}>
                         <ListItemButton>
                             <ListItemIcon>{ele.icon}</ListItemIcon>
                             <Typography>{ele.text}</Typography>

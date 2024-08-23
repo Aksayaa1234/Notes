@@ -4,7 +4,7 @@ import SpeakerNotesIcon from '@mui/icons-material/SpeakerNotes';
 const Navbar=({OpenD,OpenI})=>{
     return(
         <>
-        <AppBar>
+        <AppBar position="sticky">
             <Toolbar>
                 <IconButton onClick={OpenD} >
                 <SpeakerNotesIcon fontSize="large"></SpeakerNotesIcon>

@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-const localStorage=(key)=>{
+const useLocalStorage=(key)=>{
     let prev=localStorage.getItem(key);
     let notes=[];
     if(!prev)
@@ -22,9 +22,11 @@ const localStorage=(key)=>{
         setStore((state)=>{
             let temp=[...state];
             temp.splice(i,1);
-            localStorage.setItem(key,Json.stringify(temp));
+            localStorage.setItem(key,JSON.stringify(temp));
             return temp;
         })
     }
     return [store,Additems,Removeitems];
 }
+
+export default useLocalStorage;
